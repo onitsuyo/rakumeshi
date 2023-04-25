@@ -2,7 +2,7 @@
 
 <div> 料理を投稿する</div>
 <%= form_with model: @recipe, local: true do |f| %>
-  <div>料理名</div>
+  <div>料理の名前</div>
   <%= f.text_field :name, placeholder: "料理名" %>必須
   <div>料理の画像</div>
   <%= f.file_field :image, id:"item-image" %>必須
