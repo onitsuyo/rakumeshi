@@ -4,13 +4,14 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @recipe = Recipe.new
+    @form = Form.new 
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
-    if @recipe.save
-      redirect_to root_path
+    @form = Form.new(recipe_params)
+    if @form.valid?
+      @form.save 
+      redirect_to root_path 
     else
       render :new
     end
@@ -19,7 +20,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params 
-    params.require(:recipe).permit(:name, :caption, :cooking_time, :image).merge(user_id: current_user.id)
+    params.require(:form).permit(:name, :caption, :cooking_time, :image, :ingredient_name, :seasoning_name, :step).merge(user_id: current_user.id)
   end
 
 end
