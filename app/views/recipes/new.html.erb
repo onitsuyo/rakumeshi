@@ -1,15 +1,35 @@
 <h1>投稿ページ</h1>
 
-<div> 料理を投稿する</div>
-<%= form_with model: @recipe, local: true do |f| %>
-  <div>料理の名前</div>
-  <%= f.text_field :name, placeholder: "料理名" %>必須
-  <div>料理の画像</div>
-  <%= f.file_field :image, id:"item-image" %>必須
-  <div>料理の説明</div>
-  <%= f.text_field :caption, placeholder: "説明文" %>必須
-  <div>調理時間</div>
-  <%= f.text_field :cooking_time, placeholder: "調理時間(分)" %>任意<br>
+<h2> 料理を投稿する</h2>
+<%= form_with url: recipes_path, local: true do |f| %>
+  <div>
+    <%= f.label :name, "料理の名前" %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :image, "料理の写真" %>
+    <%= f.file_field :image, id:"item-image" %>
+  </div>
+  <div>
+    <%= f.label :caption, "料理の説明" %>
+    <%= f.text_field :caption %>
+  </div>
+  <div>
+    <%= f.label :cooking_time, "調理時間(分)" %>
+    <%= f.text_field :cooking_time %>
+  </div>
+  <div>
+    <%= f.label :ingredient_name, "材料" %>
+    <%= f.text_field :ingredient_name %>
+  </div>
+  <div>
+    <%= f.label :seasoning_name, "調味料" %>
+    <%= f.text_field :seasoning_name %>
+  </div>
+  <div>
+    <%= f.label :step, "作り方" %>
+    <%= f.text_area :step %>
+  </div>
   <%= f.submit "投稿する" %>
 <% end %>
 
