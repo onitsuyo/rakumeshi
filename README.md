@@ -18,7 +18,7 @@
 | Column       | Type    | Options     |
 | ------------ | ------- | ----------- |
 | name         | string  | null: false |
-| caprion      | string  | null: false |
+| caption      | string  | null: false |
 | cooking_time | integer | null: false |
 
 ### Association

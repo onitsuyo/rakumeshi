@@ -4,16 +4,16 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @form = Form.new 
+    @form = Form.new
   end
 
   def create
     @form = Form.new(recipe_params)
-    if @form.valid?
+    if @form.valid? 
       @form.save 
-      redirect_to root_path 
-    else
-      render :new
+      redirect_to root_path
+    else  
+      render :new 
     end
   end
 
